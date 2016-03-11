@@ -1,0 +1,43 @@
+.testContainer{
+  wdith:980px;
+  padding-left: auto;
+  padding-right: auto;
+  padding-top: 100px;
+}
+
+.itemContent{
+  width: 98%;
+  height: 500px;
+  background-color: #808080;
+  padding: 5px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
+}
+.itemButonStyle{
+   width: 400px;
+   height: 300px;
+   border: 1px solid black;
+   padding: 13px;
+   background-color: #3F7FBF;
+   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
+   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
+   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
+
+}
+
+.testContainer ul{
+  list-style: none;;
+  margin: 0px;
+  padding: 0px;
+}
+
+.testContainer li{
+  display: block;
+  float: left;
+  margin-right: 10px;
+}
+
+div.items p:not(:target) {display: none};
+div.items p:target (display:block);
+div.items p {height :100%}
