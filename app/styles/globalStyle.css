@@ -1,0 +1,38 @@
+.testContainer{
+  wdith:980px;
+  padding-left: auto;
+  padding-right: auto;
+  padding-top: 100px;
+  border: 1px solid black;
+}
+
+#tabContainer{
+  width: auto;
+  border: 1px solid black;
+  background-color: #C14242;
+  padding-left: auto;
+  padding-right: auto;
+  padding-top: 100px;
+
+}
+
+.testContainer ul{
+  list-style: none;;
+  margin: 0px;
+  padding: 0px;
+  display: inline-block;
+
+}
+
+/*
+.testContainer li{
+  padding: 0px;
+  margin: 0px;
+  width: auto;
+}
+*/
+
+.itemButonStyle{
+
+
+}
