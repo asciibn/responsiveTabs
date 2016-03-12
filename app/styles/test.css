@@ -1,8 +1,8 @@
 
 
 .itemContent{
-  width: 98%;
-  height: 500px;
+  width: auto;
+  height: 100px;
   background-color: #808080;
   padding: 5px;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
@@ -18,8 +18,9 @@
   padding: 5px;
 }
 
-.testContainer li button{
+.testContainer li a{
   width: 150px;
+  text-align: center;
 
 }
 
@@ -28,11 +29,8 @@ ul {
   overflow: auto;
 }
 
-.contentContainer.div{
-  width: 600px;
-  border: 1px black solid;
-}
-/*
+
+
 div.items p:not(:target) {display: none};
 div.items p:target (display:block);
 div.items p {height :100%}
@@ -42,3 +40,4 @@ div.items p {height :100%}
   margin: 0px;
   width: auto;
 }
+/*

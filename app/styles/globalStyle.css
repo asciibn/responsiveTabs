@@ -29,11 +29,27 @@
 
 
 
-.testContainer li button{
+.testContainer li a{
+  display: block;
   background-color: #3FBFBF;
-  -moz-border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 50px 50px 50px 50px;
+  -webkit-border-radius: 50px 50px 50px 50px;
   border: 0px solid #000000;
   height: 50px;
+  text-align: center;
+
 
 }
+
+.testContainer  span{
+display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%)
+
+}
+
+div.items p:not(:target) {display: none};
+div.items p:target (display:block);
+div.items p {height :100%}
