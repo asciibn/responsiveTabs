@@ -16,6 +16,7 @@
 
     <!-- build:css styles/main.css -->
 
+    <link rel="stylesheet" href="styles/globalStyle.css">
     <link rel="stylesheet" media="(min-width: 800px)" href="styles/test.css">
     <link rel="stylesheet" media="(max-width: 800px)" href="styles/test2.css">
 
@@ -32,18 +33,26 @@
     <![endif]-->
 
     <div class="testContainer">
-      <ul>
-        <li><a href="#item1" class="itemButonStyle">Item 1</a></li>
-        <li><a href="#item2" class="itemButonStyle">Item 2</a></li>
-        <li><a href="#item3" class="itemButonStyle">Item 3</a></li>
-      </ul>
-    </div>
-    <br />
-     <div class="items">
-       <p id="item1" class="itemContent">Content of Item 1</p>
-       <p id="item2" class="itemContent">Content of Item 2</p>
-       <p id="item3"class="itemContent">Content of Item 3</p>
-     </div>
+      <div id="tabContainer">
+        <ul>
+            <li><button>Item 1</button></li>
+            <li><button>Item 2</button></li>
+            <li><button>Item 3</button></li>
+        </ul>
+
+      <div class='contentContainer'>
+        <div id="content1" class="itemContent">
+           <p>Content 1</p>
+        </div>
+        <div id="content1" class="itemContent">
+           <p>Content 2</p>
+        </div>
+        <div id="content1" class="itemContent">
+           <p>Content 3</p>
+        </div>
+      </div>
+
+      </div>
     </div>
 
 

@@ -1,9 +1,4 @@
-.testContainer{
-  wdith:980px;
-  padding-left: auto;
-  padding-right: auto;
-  padding-top: 100px;
-}
+
 
 .itemContent{
   width: 98%;
@@ -14,30 +9,36 @@
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
 }
-.itemButonStyle{
-   width: 400px;
-   height: 300px;
-   border: 1px solid black;
-   padding: 13px;
-   background-color: #3F7FBF;
-   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
-   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
-   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
 
-}
-
-.testContainer ul{
-  list-style: none;;
-  margin: 0px;
-  padding: 0px;
-}
 
 .testContainer li{
   display: block;
   float: left;
-  margin-right: 10px;
+  margin-right: 5px;
+  padding: 5px;
 }
 
+.testContainer li button{
+  width: 150px;
+
+}
+
+
+ul {
+  overflow: auto;
+}
+
+.contentContainer.div{
+  width: 600px;
+  border: 1px black solid;
+}
+/*
 div.items p:not(:target) {display: none};
 div.items p:target (display:block);
 div.items p {height :100%}
+/*
+.testContainer li{
+  padding: 5px;
+  margin: 0px;
+  width: auto;
+}
