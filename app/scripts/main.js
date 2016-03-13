@@ -5,6 +5,8 @@
 var targetContent;
 var targetElement;
 
+  var desktopMediaQuery = window.matchMedia('(min-width: 800px)');
+      desktopMediaQuery.addListener(cleanUpMobile);
 
   var mediaQueryInfo = window.matchMedia('(max-width: 800px)');
       mediaQueryInfo.addEventListener(setTabEvents);
@@ -14,10 +16,16 @@ var targetElement;
        if(mediaQueryInfo.matches){
          return true;
        }else{
-        console.log('larget than 800px');
          return false;
        }
     };
+
+    function cleanUpMobile(){
+      if(desktopMediaQuery.matches){
+          removeFragments();      
+      }
+
+    }
 
   document.getElementById('tabItemList').addEventListener('click', function(e){
 
@@ -74,7 +82,9 @@ function addNewElement(content){
     for(var i = 0; i < navList.childNodes.length; i++){
       //console.log(navList.childNodes[i] +' ' + navList.childNodes[i].nodeType);
       if(navList.childNodes[i].nodeType === 1 && navList.childNodes[i].childNodes[1] !== undefined){
-        document.querySelector('.items').appendChild(navList.childNodes[i].childNodes[1]);
+       document.querySelector('.items').appendChild(navList.childNodes[i].childNodes[1].childNodes[0]);
+       navList.childNodes[i].removeChild(navList.childNodes[i].childNodes[1]);
+        //console.log(navList.childNodes[i].childNodes[1].childNodes[0]);
       }
     }
   }

@@ -54,7 +54,3 @@ display: inline-block;
   transform: translateY(-50%)
 
 }
-
-div.items p:not(:target) {display: none};
-div.items p:target (display:block);
-div.items p {height :100%}
