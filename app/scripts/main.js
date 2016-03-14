@@ -1,16 +1,12 @@
 
 (function() {
-'use strict'
+'use strict';
 
 var targetContent;
 var targetElement;
+var desktopMediaQuery = window.matchMedia('(min-width: 800px)');
+var mediaQueryInfo = window.matchMedia('(max-width: 800px)');
 
-  var onHashChange = window.addEventListener('hashchange', checkCurrentHash, false);
-  var desktopMediaQuery = window.matchMedia('(min-width: 800px)');
-      desktopMediaQuery.addListener(cleanUpMobile);
-
-  var mediaQueryInfo = window.matchMedia('(max-width: 800px)');
-      mediaQueryInfo.addEventListener(setTabEvents);
 
     function setTabEvents(){
 
@@ -19,11 +15,11 @@ var targetElement;
        }else{
          return false;
        }
-    };
+    }
 
-    function checkCurrentHash(e){
+    function checkCurrentHash(){
       if(location.hash.length > 0){
-        targetContent = location.hash.slice(1,location.hash.length);
+        targetContent = location.hash.slice(1, location.hash.length);
         var allATags = document.getElementsByTagName('a');
         for(var i = 0; i < allATags.length; i++){
           if(allATags[i].rel === targetContent){
@@ -34,6 +30,7 @@ var targetElement;
       }
 
     }
+
 
     function cleanUpMobile(){
       if(desktopMediaQuery.matches){
@@ -54,11 +51,58 @@ var targetElement;
 
     }
 
-document.getElementById('tabItemList').addEventListener('click', setupMobileTabs);
+    function contentLayout(){
+      if(setTabEvents()){
+        switch (targetContent) {
+          case 'item1':
+          removeFragments();
+          if(targetElement.parentElement.childNodes.length !== 2){
+            addNewElement(document.getElementById('item1'));
+          }
+
+          break;
+          case 'item2':
+            removeFragments();
+            if(targetElement.parentElement.childNodes.length !== 2){
+              addNewElement(document.getElementById('item2'));
+            }
+
+          break;
+          case 'item3':
+            removeFragments();
+            if(targetElement.parentElement.childNodes.length !== 2){
+              addNewElement(document.getElementById('item3'));
+            }
+          break;
+          default:
+
+        }
+      }else{
+        //document.getElementById('tabItemList').removeEventListener('click', setupMobileTabs, false);
+        document.getElementById('item1').className = 'dontDisplayItem';
+        document.getElementById('item2').className = 'dontDisplayItem';
+        document.getElementById('item3').className = 'dontDisplayItem';
+        switch (targetContent) {
+          case 'item1':
+            document.getElementById('item1').className = 'displayItem, itemContent';
+          break;
+          case 'item2':
+            document.getElementById('item2').className = 'displayItem, itemContent';
+
+          break;
+          case 'item3':
+            document.getElementById('item3').className = 'displayItem, itemContent';
+          break;
+          default:
+
+        }
+      }
+    }
+
 
 function setupMobileTabs(e){
 
-      if(e.target.rel === undefined || e.target.parentElement != 'tabContainer'){
+      if(e.target.rel === undefined || e.target.parentElement !== 'tabContainer'){
         targetContent = e.target.parentElement.rel;
         targetElement = e.target.parentElement;
 
@@ -73,53 +117,7 @@ function setupMobileTabs(e){
         contentLayout();
 }
 
-function contentLayout(){
-  if(setTabEvents()){
-    switch (targetContent) {
-      case 'item1':
-      removeFragments();
-      if(targetElement.parentElement.childNodes.length != 2){
-        addNewElement(document.getElementById('item1'));
-      }
 
-      break;
-      case 'item2':
-        removeFragments();
-        if(targetElement.parentElement.childNodes.length != 2){
-          addNewElement(document.getElementById('item2'));
-        }
-
-      break;
-      case 'item3':
-        removeFragments();
-        if(targetElement.parentElement.childNodes.length != 2){
-          addNewElement(document.getElementById('item3'));
-        }
-      break;
-      default:
-
-    }
-  }else{
-    //document.getElementById('tabItemList').removeEventListener('click', setupMobileTabs, false);
-    document.getElementById('item1').className = 'dontDisplayItem';
-    document.getElementById('item2').className = 'dontDisplayItem';
-    document.getElementById('item3').className = 'dontDisplayItem';
-    switch (targetContent) {
-      case 'item1':
-        document.getElementById('item1').className = 'displayItem, itemContent';
-      break;
-      case 'item2':
-        document.getElementById('item2').className = 'displayItem, itemContent';
-
-      break;
-      case 'item3':
-        document.getElementById('item3').className = 'displayItem, itemContent';
-      break;
-      default:
-
-    }
-  }
-}
 
 function addNewElement(content){
   var tempDiv = document.createElement('div');
@@ -141,4 +139,8 @@ function addNewElement(content){
     }
   }
 
+window.addEventListener('hashchange', checkCurrentHash, false);
+desktopMediaQuery.addListener(cleanUpMobile);
+mediaQueryInfo.addEventListener(setTabEvents);
+document.getElementById('tabItemList').addEventListener('click', setupMobileTabs);
 })();
