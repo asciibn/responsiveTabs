@@ -7,9 +7,9 @@ var targetElement;
 var desktopMediaQuery = window.matchMedia('(min-width: 800px)');
 var mediaQueryInfo = window.matchMedia('(max-width: 800px)');
 
+document.getElementById('item1').className = 'displayItem, itemContent';
 
     function setTabEvents(){
-
        if(mediaQueryInfo.matches){
          return true;
        }else{
