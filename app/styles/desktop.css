@@ -29,12 +29,26 @@ ul {
   overflow: auto;
 }
 
+div.items{
+  display: block;;
+}
 
+.displayItem{
+    display: block;;
+}
+
+.dontDisplayItem{
+  display: none;
+}
+
+
+/*
 
 div.items p:not(:target) {display: none};
 div.items p:target (display:block);
 div.items p {height :100%}
-/*
+
+
 .testContainer li{
   padding: 5px;
   margin: 0px;
